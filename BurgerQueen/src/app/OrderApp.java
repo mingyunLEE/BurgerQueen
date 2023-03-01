@@ -1,8 +1,16 @@
 package app;
 
+import app.product.Product;
+import app.product.ProductRepository;
+
 public class OrderApp {
 
     public void start() {
+        ProductRepository productRepository = new ProductRepository();
+        Product[] products = productRepository.getAllProducts();
+        Menu menu = new Menu(products);
+
+        System.out.println("🍔 BergerQueen Order Service");
 //        while (true){
 //          메뉴 출력
 //          사용자 입력 받기

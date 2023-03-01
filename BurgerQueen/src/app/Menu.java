@@ -1,4 +1,6 @@
-package app.product;
+package app;
+
+import app.product.Product;
 
 public class Menu {
     private Product[] products;
