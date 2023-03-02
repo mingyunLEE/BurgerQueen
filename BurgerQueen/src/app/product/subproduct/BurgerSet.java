@@ -1,6 +1,6 @@
 package app.product.subproduct;
 
-import app.Product;
+import app.product.Product;
 
 public class BurgerSet extends Product {    // BurgerSet class that inherits from Product class
     private Hamburger hamburger;    //Declare a hamburger variable with the hamburger class

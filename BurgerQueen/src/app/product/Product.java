@@ -1,4 +1,4 @@
-package app;
+package app.product;
 
 public class Product {      //Product class
     private int id;         // instance variable of Product

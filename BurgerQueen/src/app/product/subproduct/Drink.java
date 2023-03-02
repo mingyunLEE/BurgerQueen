@@ -1,6 +1,6 @@
 package app.product.subproduct;
 
-import app.Product;
+import app.product.Product;
 
 public class Drink extends Product {     //Drink class that inherits from the Product class
     private boolean hasStraw;        // instance variable of Drink class

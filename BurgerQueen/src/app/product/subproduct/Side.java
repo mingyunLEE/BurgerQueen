@@ -1,6 +1,6 @@
 package app.product.subproduct;
 
-import app.Product;
+import app.product.Product;
 
 public class Side extends Product { //side class that inherits from the product class
     private int ketchup;    //instance variable of Side class

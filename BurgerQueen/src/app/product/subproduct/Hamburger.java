@@ -1,6 +1,6 @@
 package app.product.subproduct;
 
-import app.Product;
+import app.product.Product;
 
 public class Hamburger extends Product {        // Hamburger class inherited product class
     private boolean isBurgerSet;        //instance variable of Hamburger class
