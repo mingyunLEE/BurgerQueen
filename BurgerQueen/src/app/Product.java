@@ -7,7 +7,7 @@ public class Product {      //Product class
     private int kcal;       // instance variable of Product
 
     public Product(int id, String name, int price, int kcal) {  //default constructor of Product class
-        this.id = id;                                           //this id = filld variable of Product class
+        this.id = id;                                           //this id = field variable of Product class
         this.name = name;                                       //this name is field variable of Product class
         this.price = price;                                     //this price is field variable of Product class
         this.kcal = kcal;                                       //this kcal is field variable of Product class
