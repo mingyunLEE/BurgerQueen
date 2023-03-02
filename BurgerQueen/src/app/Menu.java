@@ -3,6 +3,7 @@ package app;
 import app.product.Product;
 import app.product.subproduct.Drink;
 import app.product.subproduct.Hamburger;
+import app.product.subproduct.Side;
 
 public class Menu {
     private Product[] products; //When instantiating the Menu class, if ProductRepository's products are passed as an argument,
@@ -39,7 +40,7 @@ public class Menu {
     private void printSides() {
         System.out.println("🍟 사이드");
         for (Product product : products){   // Iterate through the length of the products
-            if(product instanceof Drink){   // Returns ture if product instance is an instance of hamburger
+            if(product instanceof Side){   // Returns ture if product instance is an instance of hamburger
                 printEachMenu(product);
             }
         }
