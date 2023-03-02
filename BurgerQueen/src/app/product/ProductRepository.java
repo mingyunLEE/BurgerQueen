@@ -18,4 +18,11 @@ public class ProductRepository {
     public Product[] getAllProducts() { // created a getter because products can be accessed from the out class
         return products;
     }
+
+    public Product findById(int productId){ //defined findById method
+        for (Product product : products){   //Iterated products Array
+            if (product.getId() == productId) return product; // Return the product if it matches the ID received as a parameter.
+        }
+        return null;
+    }
 }

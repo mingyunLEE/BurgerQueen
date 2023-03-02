@@ -7,10 +7,13 @@ public class BurgerSet extends Product {    // BurgerSet class that inherits fro
     private Side side;      //Declare a side variable with the Side class
     private Drink drink;    //Declare a drink variable with the drink class
 
-    public BurgerSet(int id, String name, int price, int kcal, Hamburger hamburger) { //default constructor of BurgerSet class
-        super(id, name, price, kcal);   // call the parent class constructor
+    public BurgerSet(String name, int price, int kcal, Hamburger hamburger, Side side, Drink drink) { //default constructor of BurgerSet class
+        super(name, price, kcal);   // call the parent class constructor
         this.hamburger = hamburger; // field of BurgerSet
+        this.side = side;   //field of BurgerSet
+        this.drink = drink; //field of BurgerSet;
     }
+
 
     public Hamburger getHamburger() {   //getter of hamburger
         return hamburger;

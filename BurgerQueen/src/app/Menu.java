@@ -27,7 +27,7 @@ public class Menu {
         System.out.print("[📣] 메뉴를 선택해주세요 : ");
     }
 
-    private void printDrinks() {
+    protected void printDrinks() {
         System.out.println("🥤 음료");
         for (Product product : products){   // Iterate through the length of the products
             if(product instanceof Drink){   // Returns ture if product instance is an instance of hamburger
@@ -37,7 +37,7 @@ public class Menu {
         System.out.println();
     }
 
-    private void printSides() {
+    protected void printSides() {
         System.out.println("🍟 사이드");
         for (Product product : products){   // Iterate through the length of the products
             if(product instanceof Side){   // Returns ture if product instance is an instance of hamburger
