@@ -12,6 +12,12 @@ public class Hamburger extends Product {        // Hamburger class inherited pro
         this.burgerSetPrice = burgerSetPrice;   // field of Hamburger class
     }
 
+    public Hamburger(Hamburger hamburger) {
+        super(hamburger.getName(), hamburger.getPrice(), hamburger.getKcal());
+        this.isBurgerSet = hamburger.isBurgerSet();
+        this.burgerSetPrice = hamburger.getBurgerSetPrice();
+    }
+
     public boolean isBurgerSet() {      //Getter of isBurgerSet
         return isBurgerSet;
     }

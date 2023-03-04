@@ -9,7 +9,10 @@ public class Side extends Product { //side class that inherits from the product 
         super(id, name, price, kcal);       // call the upper class constructor
         this.ketchup = ketchup;     // field variable of Side class
     }
-
+    public Side(Side side) {
+        super(side.getName(), side.getPrice(), side.getKcal());
+        this.ketchup = side.getKetchup();
+    }
     public int getKetchup() {       // Getter of ketchup variable
         return ketchup;
     }

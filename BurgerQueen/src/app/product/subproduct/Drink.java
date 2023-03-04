@@ -9,6 +9,10 @@ public class Drink extends Product {     //Drink class that inherits from the Pr
         super(id, name, price, kcal);   // call the parent class constructor
         this.hasStraw = hasStraw;         // field of Drink class
     }
+    public Drink(Drink drink) {
+        super(drink.getName(), drink.getPrice(), drink.getKcal());
+        this.hasStraw = drink.hasStraw();
+    }
 
     public boolean hasStraw() {      //getter of hasStraw
         return hasStraw;
