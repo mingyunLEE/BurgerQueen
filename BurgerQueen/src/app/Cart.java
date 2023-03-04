@@ -81,7 +81,7 @@ public class Cart {
         System.out.println("이전으로 돌아가려면 엔터를 누르세요. ");
         scanner.nextLine();
     }
-    private int calculateTotalPrice(){  //Defined the calculateTotalPrice method
+    protected int calculateTotalPrice(){  //Defined the calculateTotalPrice method
         int totalPrice = 0;
         for(Product product : items){      //Iterate over the items array and get the sum of price
             totalPrice += product.getPrice();
@@ -112,7 +112,7 @@ public class Cart {
             if (input.equals("2")) ((Drink) product).setHasStraw(false);
         }
     }
-    private void printCartItemDetails() {   //define the printCartItemDetails method
+    protected void printCartItemDetails() {   //define the printCartItemDetails method
         for (Product product : items) {
             if (product instanceof BurgerSet) {
                 BurgerSet burgerSet = (BurgerSet) product; // DownCasting to BurgerSet
