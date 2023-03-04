@@ -48,16 +48,22 @@ public class Cart {
 
     public void addToCart(int productId){
         Product product = productRepository.findById(productId); // Declare variables using literals returned by method
-        chooseOption(product);
 
-        if (product instanceof Hamburger){
-            Hamburger hamburger = (Hamburger) product; // downCasting
-            if (hamburger.isBurgerSet()) product = composeSet(hamburger);
+        Product newProduct;
+        if(product instanceof Hamburger) newProduct = new Hamburger((Hamburger) product);
+        else if (product instanceof Side) newProduct = new Side((Side) product);
+        else newProduct = new Drink((Drink) product);
+
+        chooseOption(newProduct);
+
+        if (newProduct instanceof Hamburger) {
+            Hamburger hamburger = (Hamburger) newProduct;
+            if (hamburger.isBurgerSet()) newProduct = composeSet(hamburger);
         }
 
         Product[] newItems = new Product[items.length+1];
         System.arraycopy(items, 0, newItems, 0, items.length);
-        newItems[newItems.length - 1] = product;
+        newItems[newItems.length - 1] = newProduct;
         items = newItems;
 
         System.out.printf("[📣] %s를(을) 장바구니에 담았습니다.\n", product.getName());
