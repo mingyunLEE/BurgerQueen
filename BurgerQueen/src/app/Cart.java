@@ -30,20 +30,22 @@ public class Cart {
 
         String sideId = scanner.nextLine();
         Side side = (Side) productRepository.findById(Integer.parseInt(sideId));
-        chooseOption(side);
+        Side newSide = new Side(side);
+        chooseOption(newSide);
 
         System.out.println("음료를 골라주세요.");
         menu.printDrinks(false);
 
         String drinkId = scanner.nextLine();
         Drink drink = (Drink) productRepository.findById(Integer.parseInt(drinkId));
-        chooseOption(drink);
+        Drink newDrink = new Drink(drink);
+        chooseOption(newDrink);
 
         String name = hamburger.getName() + "세트";
         int price = hamburger.getBurgerSetPrice();
         int kcal = hamburger.getKcal() + side.getKcal() + drink.getKcal();
 
-        return new BurgerSet(name, price, kcal, hamburger, side, drink);
+        return new BurgerSet(name, price, kcal, hamburger, newSide, newDrink);
     }
 
     public void addToCart(int productId){
