@@ -16,12 +16,14 @@ public class OrderApp {
         Menu menu = new Menu(products);    //create menu instance
         Cart cart = new Cart(productRepository, menu);
 
+        Order order = new Order(cart);
         System.out.println("🍔 BurgerQueen Order Service");
         while (true){
             menu.printMenu();
             String input = scanner.nextLine(); // Declaring the input variable using scanner method
 
             if(input.equals("+")){
+                order.makeOrder();
                 break;
             }else {
                 int memNumber = Integer.parseInt(input);
@@ -31,8 +33,6 @@ public class OrderApp {
             }
 
         }
-
-
     }
 
 }
