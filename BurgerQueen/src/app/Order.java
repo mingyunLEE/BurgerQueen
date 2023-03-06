@@ -2,6 +2,7 @@ package app;
 
 import app.discount.discountCondition.CozDiscountCondition;
 import app.discount.discountCondition.KidDiscountCondition;
+import app.discount.discountPolicy.FixedAmountDiscountPolicy;
 
 public class Order {
     private Cart cart;
@@ -12,7 +13,7 @@ public class Order {
 
     public void makeOrder() {
 
-        CozDiscountCondition cozDiscountCondition = new CozDiscountCondition();
+        CozDiscountCondition cozDiscountCondition = new CozDiscountCondition(new FixedAmountDiscountPolicy(10));
         KidDiscountCondition kidDiscountCondition = new KidDiscountCondition();
 
         cozDiscountCondition.checkDiscountCondition();

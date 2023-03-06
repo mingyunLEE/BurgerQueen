@@ -1,5 +1,6 @@
 package app.discount.discountCondition;
 
+import app.discount.discountPolicy.DiscountPolicy;
 import app.discount.discountPolicy.FixedRateDiscountPolicy;
 
 import java.util.Scanner;
@@ -7,7 +8,12 @@ import java.util.Scanner;
 public class CozDiscountCondition {
     private boolean isSatisfied;
 
-    private FixedRateDiscountPolicy fixedRateDiscountPolicy = new FixedRateDiscountPolicy(10);
+    private DiscountPolicy discountPolicy;
+
+    public CozDiscountCondition(DiscountPolicy discountPolicy){
+        this.discountPolicy = discountPolicy;
+    }
+
     public boolean isSatisfied() {
         return isSatisfied;
     }
@@ -29,6 +35,6 @@ public class CozDiscountCondition {
     }
 
     public int applyDiscount(int price){
-        return fixedRateDiscountPolicy.calcultateDiscountedPrice(price);
+        return discountPolicy.calculateDiscountedPrice(price);
     }
 }
